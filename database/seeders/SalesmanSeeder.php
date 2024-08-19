@@ -17,24 +17,32 @@ class SalesmanSeeder extends Seeder
             'salesman_name' => 'Lauda',
             'salesman_city' => 'New York',
             'commission' => 0.15,
+            'created_at' => now(),
+            'updated_at' => null
         ]);
 
         DB::table('salesman')->insert([
             'salesman_name' => 'Miomio',
             'salesman_city' => 'Los Angeles',
             'commission' => 0.12,
+            'created_at' => now(),
+            'updated_at' => null
         ]);
 
         DB::table('salesman')->insert([
             'salesman_name' => 'Kamille',
             'salesman_city' => 'Houston',
             'commission' => 0.10,
+            'created_at' => now(),
+            'updated_at' => null
         ]);
 
         DB::table('salesman')->insert([
             'salesman_name' => 'Agus',
             'salesman_city' => 'Chicago',
             'commission' => 0.14,
+            'created_at' => now(),
+            'updated_at' => null
         ]);
     }
 }

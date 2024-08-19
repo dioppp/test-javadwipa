@@ -18,6 +18,8 @@ class OrdersSeeder extends Seeder
             'amount' => 200.00,
             'salesman_id' => 1,
             'customer_id' => 1,
+            'created_at' => now(),
+            'updated_at' => null
         ]);
 
         DB::table('orders')->insert([
@@ -25,6 +27,8 @@ class OrdersSeeder extends Seeder
             'amount' => 250.00,
             'salesman_id' => 2,
             'customer_id' => 1,
+            'created_at' => now(),
+            'updated_at' => null
         ]);
 
         DB::table('orders')->insert([
@@ -32,6 +36,8 @@ class OrdersSeeder extends Seeder
             'amount' => 150.00,
             'salesman_id' => 3,
             'customer_id' => 2,
+            'created_at' => now(),
+            'updated_at' => null
         ]);
 
         DB::table('orders')->insert([
@@ -39,6 +45,8 @@ class OrdersSeeder extends Seeder
             'amount' => 300.00,
             'salesman_id' => 4,
             'customer_id' => 3,
+            'created_at' => now(),
+            'updated_at' => null
         ]);
 
         DB::table('orders')->insert([
@@ -46,6 +54,8 @@ class OrdersSeeder extends Seeder
             'amount' => 400.00,
             'salesman_id' => 1,
             'customer_id' => 2,
+            'created_at' => now(),
+            'updated_at' => null
         ]);
 
         DB::table('orders')->insert([
@@ -53,6 +63,8 @@ class OrdersSeeder extends Seeder
             'amount' => 350.00,
             'salesman_id' => 2,
             'customer_id' => 3,
+            'created_at' => now(),
+            'updated_at' => null
         ]);
 
         DB::table('orders')->insert([
@@ -60,6 +72,8 @@ class OrdersSeeder extends Seeder
             'amount' => 500.00,
             'salesman_id' => 3,
             'customer_id' => 1,
+            'created_at' => now(),
+            'updated_at' => null
         ]);
 
         DB::table('orders')->insert([
@@ -67,6 +81,8 @@ class OrdersSeeder extends Seeder
             'amount' => 200.00,
             'salesman_id' => 4,
             'customer_id' => 3,
+            'created_at' => now(),
+            'updated_at' => null
         ]);
     }
 }
