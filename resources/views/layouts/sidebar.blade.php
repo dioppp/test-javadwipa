@@ -49,7 +49,7 @@
                     <span class="hide-menu">FEATURES</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="{{ route('orders') }}" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('orders.index') }}" aria-expanded="false">
                         <span>
                             <i class="ti ti-arrows-sort"></i>
                         </span>

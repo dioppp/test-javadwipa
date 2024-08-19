@@ -26,4 +26,4 @@ Route::resource('/customers', CustomersController::class)->except(['show', 'crea
 Route::resource('/salesman', SalesmanController::class)->except(['show', 'create', 'edit']);
 
 // Orders
-Route::get('/orders', [OrdersController::class, 'index'])->name('orders');
+Route::resource('/orders', OrdersController::class)->except(['show', 'create', 'edit']);

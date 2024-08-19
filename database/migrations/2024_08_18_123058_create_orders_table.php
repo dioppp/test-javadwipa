@@ -15,8 +15,12 @@ return new class extends Migration
             $table->id('order_id');
             $table->date('order_date');
             $table->float('amount', 8, 2);
-            $table->foreignId('salesman_id')->constrained('salesman', 'salesman_id');
-            $table->foreignId('customer_id')->constrained('customers', 'customer_id');
+            $table->foreignId('salesman_id')
+                ->constrained('salesman', 'salesman_id')
+                ->onDelete('cascade');
+            $table->foreignId('customer_id')
+                ->constrained('customers', 'customer_id')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

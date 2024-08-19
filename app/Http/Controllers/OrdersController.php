@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Orders;
+use App\Models\Salesman;
+use App\Models\Customers;
 use App\Http\Requests\StoreOrdersRequest;
 use App\Http\Requests\UpdateOrdersRequest;
 
@@ -13,7 +15,11 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        //
+        $order = Orders::all();
+        $customer = Customers::all();
+        $salesman = Salesman::all();
+
+        return view('orders', compact('order', 'customer', 'salesman'));
     }
 
     /**
@@ -29,13 +35,14 @@ class OrdersController extends Controller
      */
     public function store(StoreOrdersRequest $request)
     {
-        //
+        Orders::create($request->validated());
+        return redirect()->route('orders.index')->with('success', 'Order created successfully');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Orders $orders)
+    public function show(Orders $order)
     {
         //
     }
@@ -43,7 +50,7 @@ class OrdersController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Orders $orders)
+    public function edit(Orders $order)
     {
         //
     }
@@ -51,16 +58,24 @@ class OrdersController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateOrdersRequest $request, Orders $orders)
+    public function update(UpdateOrdersRequest $request, Orders $order)
     {
-        //
+        if ($order) {
+            $order->update($request->validated());
+            return redirect()->route('orders.index')->with('success', 'Order updated successfully');
+        }
+        return redirect()->route('orders.index')->with('error', 'Order not found');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Orders $orders)
+    public function destroy(Orders $order)
     {
-        //
+        if ($order) {
+            $order->delete();
+            return redirect()->route('orders.index')->with('success', 'Order deleted successfully');
+        }
+        return redirect()->route('orders.index')->with('error', 'Order not found');
     }
 }
