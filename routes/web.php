@@ -23,7 +23,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('/customers', CustomersController::class)->except(['show', 'create', 'edit']);
 
 // Salesman
-Route::get('/salesman', [SalesmanController::class, 'index'])->name('salesman');
+Route::resource('/salesman', SalesmanController::class)->except(['show', 'create', 'edit']);
 
 // Orders
 Route::get('/orders', [OrdersController::class, 'index'])->name('orders');

@@ -9,5 +9,7 @@ class Salesman extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'salesman_id';
     protected $guarded = [];
+    protected $table = 'salesman';
 }

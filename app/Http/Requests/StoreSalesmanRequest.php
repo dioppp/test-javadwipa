@@ -11,7 +11,7 @@ class StoreSalesmanRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class StoreSalesmanRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'salesman_name' => ['required', 'string', 'max:255', 'unique:salesman,salesman_name'],
+            'salesman_city' => ['required', 'string', 'max:255'],
+            'commission' => ['required', 'numeric'],
+            'created_at' => ['required', 'date'],
+            'updated_at' => ['nullable']
         ];
     }
 }

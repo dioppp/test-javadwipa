@@ -13,7 +13,8 @@ class SalesmanController extends Controller
      */
     public function index()
     {
-        //
+        $salesman = Salesman::all();
+        return view('salesman', compact('salesman'));
     }
 
     /**
@@ -29,7 +30,8 @@ class SalesmanController extends Controller
      */
     public function store(StoreSalesmanRequest $request)
     {
-        //
+        Salesman::create($request->validated());
+        return redirect()->route('salesman.index')->with('success', 'Salesman created successfully');
     }
 
     /**
@@ -53,7 +55,11 @@ class SalesmanController extends Controller
      */
     public function update(UpdateSalesmanRequest $request, Salesman $salesman)
     {
-        //
+        if ($salesman) {
+            $salesman->update($request->validated());
+            return redirect()->route('salesman.index')->with('success', 'Salesman updated successfully');
+        }
+        return redirect()->route('salesman.index')->with('error', 'Salesman not found');
     }
 
     /**
@@ -61,6 +67,10 @@ class SalesmanController extends Controller
      */
     public function destroy(Salesman $salesman)
     {
-        //
+        if ($salesman) {
+            $salesman->delete();
+            return redirect()->route('salesman.index')->with('success', 'Salesman deleted successfully');
+        }
+        return redirect()->route('salesman.index')->with('error', 'Salesman not found');
     }
 }

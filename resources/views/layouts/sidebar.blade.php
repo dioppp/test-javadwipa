@@ -37,7 +37,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="{{ route('salesman') }}" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('salesman.index') }}" aria-expanded="false">
                         <span>
                             <i class="ti ti-user"></i>
                         </span>

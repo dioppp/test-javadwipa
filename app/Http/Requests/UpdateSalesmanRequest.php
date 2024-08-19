@@ -11,7 +11,7 @@ class UpdateSalesmanRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class UpdateSalesmanRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'salesman_id' => ['required', 'integer', 'exists:salesman,salesman_id'],
+            'salesman_name' => ['required', 'string', 'max:255', 'unique:salesman,salesman_name,' . $this->salesman_id . ',salesman_id'],
+            'salesman_city' => ['required', 'string', 'max:255'],
+            'commission' => ['required', 'numeric'],
+            'updated_at' => ['required', 'date']
         ];
     }
 }
