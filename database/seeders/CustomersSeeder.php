@@ -16,21 +16,29 @@ class CustomersSeeder extends Seeder
         DB::table('customers')->insert([
             'customer_name' => 'Alpha Corp',
             'customer_city' => 'New York',
+            'created_at' => now(),
+            'updated_at' => null
         ]);
 
         DB::table('customers')->insert([
             'customer_name' => 'Beta Ltd',
             'customer_city' => 'London',
+            'created_at' => now(),
+            'updated_at' => null
         ]);
 
         DB::table('customers')->insert([
             'customer_name' => 'Gamma Inc',
             'customer_city' => 'Sydney',
+            'created_at' => now(),
+            'updated_at' => null
         ]);
 
         DB::table('customers')->insert([
             'customer_name' => 'Delta Corp',
             'customer_city' => 'Madrid',
+            'created_at' => now(),
+            'updated_at' => null
         ]);
     }
 }

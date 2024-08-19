@@ -11,7 +11,7 @@ class UpdateCustomersRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class UpdateCustomersRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'customer_id' => ['required', 'integer', 'exists:customers,customer_id'],
+            'customer_name' => ['required', 'string', 'max:255', 'unique:customers,customer_name,' . $this->customer_id . ',customer_id'],
+            'customer_city' => ['required', 'string', 'max:255'],
+            'updated_at' => ['required', 'date']
         ];
     }
 }

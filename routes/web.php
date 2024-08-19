@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\SalesmanController;
+use App\Http\Controllers\CustomersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// Customers
+Route::resource('/customers', CustomersController::class)->except(['show', 'create', 'edit']);
+
+// Salesman
+Route::get('/salesman', [SalesmanController::class, 'index'])->name('salesman');
+
+// Orders
+Route::get('/orders', [OrdersController::class, 'index'])->name('orders');

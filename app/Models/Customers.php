@@ -9,5 +9,7 @@ class Customers extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'customer_id';
     protected $guarded = [];
+    protected $table = 'customers';
 }
