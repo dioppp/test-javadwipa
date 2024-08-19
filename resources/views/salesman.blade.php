@@ -143,7 +143,7 @@
                                                 @enderror
                                             </div>
                                             <div class="mb-3">
-                                                <label for="commission" class="form-label">City</label>
+                                                <label for="commission" class="form-label">Commission</label>
                                                 <input type="number"
                                                     class="form-control @error('commission') is-invalid @enderror"
                                                     id="commission" name="commission" value="{{ old('commission') }}"
