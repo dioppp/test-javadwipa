@@ -10,11 +10,40 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="card">
+                                    <img src="{{ asset('images/products/fashion.jpg') }}" class="card-img-top"
+                                        alt="..." />
                                     <div class="card-body">
-                                        <h5 class="card-title">Test</h5>
+                                        <h5 class="card-title">Fashion</h5>
                                         <p class="card-text">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, ratione.
+                                            Discover the latest trends and stylish apparel in our Fashion category.
                                         </p>
+                                        <a href="{{ route('orders.index') }}" class="btn btn-primary">Order Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="{{ asset('images/products/shoes.jpg') }}" class="card-img-top"
+                                        alt="..." />
+                                    <div class="card-body">
+                                        <h5 class="card-title">Shoes</h5>
+                                        <p class="card-text">
+                                            Check out our range of shoes, from comfy sneakers to stylish formal options.
+                                        </p>
+                                        <a href="{{ route('orders.index') }}" class="btn btn-primary">Order Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="{{ asset('images/products/laptop.jpg') }}" class="card-img-top"
+                                        alt="..." />
+                                    <div class="card-body">
+                                        <h5 class="card-title">Electronics</h5>
+                                        <p class="card-text">
+                                            Upgrade with the latest tech in our Electronics category.
+                                        </p>
+                                        <a href="{{ route('orders.index') }}" class="btn btn-primary">Order Now</a>
                                     </div>
                                 </div>
                             </div>
